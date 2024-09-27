@@ -5,11 +5,12 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-@Entity
+
 @Table(name="player_stats")
 public class Player {
+
     @Id
-    @Column(name = "name", unique = true)
+    @Column(name = "player_name", unique = true)
     private String playerName;
     private String nation;
     private String position;
@@ -50,7 +51,33 @@ public class Player {
         return playerName;
     }
 
+    public String getClub() {
+        return club;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public String getNation() {
+        return nation;
+    }
+
     public void setPlayerName(String playerName) {
         this.playerName = playerName;
     }
+
+    public void setNation(String nation) {
+        this.nation = nation;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
+    }
+
+    public void setClub(String club) {
+        this.club = club;
+    }
+
+
 }
